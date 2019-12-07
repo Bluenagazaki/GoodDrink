@@ -23,26 +23,28 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import Drink from '@/models/Interfaces';
 export default Vue.extend({
   name: 'Search',
   data() {
     return {
       search: '',
-      items: [],
     };
   },
-  mounted() {
+  computed: {
+    items(): Drink[] {
+      return this.$store.getters.search;
+    },
+  },
+  mounted(): void {
     document.getElementById('searchbar-input').focus();
   },
   methods: {
-    searchItems() {
+    searchItems(): void {
       if (this.search !== '') {
-        this.$store.dispatch('search', this.search)
-        .then((rep) => {
-          this.items = rep;
-        });
+        this.$store.dispatch('search', this.search);
       } else {
-        this.items = [];
+        this.$store.dispatch('search', '');
       }
     },
   },

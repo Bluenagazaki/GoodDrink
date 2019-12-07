@@ -1,9 +1,12 @@
 <template>
-  <div>
-    <header>
-      <!-- <h1>{{$route.name}}</h1> -->
+  <div id="home">
+    <!-- <h1>{{$route.name}}</h1> -->
+    <h2>Why limit happy to an hour?</h2>
+    <div class="separator">
 
-    </header>
+    </div>
+    <p>Become THE bartender</p>
+
   </div>
 </template>
 

@@ -16,12 +16,14 @@ import {
 import {
   faStar,
   faCocktail,
+  faBars,
 } from '@fortawesome/pro-light-svg-icons';
 
 library.add(
   faStarSolid,
   faStar,
   faCocktail,
+  faBars,
 );
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';

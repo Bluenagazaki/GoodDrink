@@ -1,8 +1,8 @@
 <template>
   <div>
-    <header>
-      <!-- <h1>{{$route.name}}</h1> -->
-    </header>
+    <!-- <header>
+      <h1>{{$route.name}}</h1>
+    </header> -->
 
     <!-- <ul>
     <li v-for="item in favs" :key="item.idDrink">
@@ -18,33 +18,21 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import Drink from '@/models/Interfaces';
 export default Vue.extend({
   name: 'List',
-
-  data() {
-    return {
-      favs: [],
-    };
-  },
   computed: {
-
+    favs(): Drink[] {
+      return this.$store.getters.favs;
+    },
   },
   methods: {
-    getItem(id) {
+    getItem(id: string): void {
       this.$store.dispatch('getItem', id)
-      .then((rep) => {
+      .then((rep: Drink) => {
         this.favs.push(rep);
       });
     },
-  },
-  created() {
-    const favs = this.$store.state.favs;
-    for (const key in favs) {
-      if (favs.hasOwnProperty(key)) {
-        const element = favs[key];
-        this.getItem(element);
-      }
-    }
   },
 });
 </script>

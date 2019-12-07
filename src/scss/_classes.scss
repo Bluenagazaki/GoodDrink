@@ -40,6 +40,18 @@ button {
     font-family: 'Lobster Two', cursive;
   }
 
+  .burger {
+    display: flex;
+    z-index: 1;
+    display: none;
+    height: 2rem;
+    width: 2rem;
+    // margin: .5rem;
+    svg {
+      font-size: 2rem;
+    }
+  }
+
   nav {
     display: flex;
     align-items: center;
@@ -60,6 +72,31 @@ button {
   padding: 1rem;
 }
 
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  flex-direction: column;
+
+  h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+
+  .separator {
+    height: 3rem;
+    width: 0;
+    border: 2px solid $dark;
+    margin: 1rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+}
+
 #drink {
   display: flex;
   align-items: flex-start;
@@ -70,9 +107,11 @@ button {
 
   .image {
     text-align: center;
+    padding-right: 1rem;
     img {
       box-shadow: $shadow;
       border-radius: 5px;
+      width: 100%;
     }
   }
 
@@ -108,14 +147,14 @@ button {
   display: flex;
   align-items: stretch;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .card {
   flex-shrink: 0;
   flex-grow: 0;
   margin: 1rem;
-  width: 12.4%;
-  // border: 1px solid $alphaDark;
+  width: 12rem;
   border-radius: 5px;
   box-shadow: $shadow;
   overflow: hidden;
@@ -125,12 +164,6 @@ button {
   &:hover {
     box-shadow: $shadowDark
   }
-
-  // .img {
-  //   width: 100%;
-  //   height: 15rem;
-  //   background-size: cover;
-  // }
 
   img {
     width: 100%;

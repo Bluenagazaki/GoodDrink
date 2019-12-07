@@ -12,26 +12,22 @@
 
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue';
+import Drink from '@/models/Interfaces';
+export default Vue.extend({
   name: 'Card',
 
   props: {
     item: Object,
   },
 
-  data() {
-    return {
-
-    };
-  },
-
   methods: {
-    openItem(id) {
+    openItem(id: number): void {
       const link = 'drink/' + this.item.idDrink;
       this.$router.push(link);
     },
   },
 
-};
+});
 </script>
